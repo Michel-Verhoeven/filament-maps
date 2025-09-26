@@ -2,6 +2,14 @@
 
 namespace Webbingbrasil\FilamentMaps\Widgets;
 
+use Webbingbrasil\FilamentMaps\Concerns\InteractsWithMapActions;
+use Webbingbrasil\FilamentMaps\Concerns\HasTileLayer;
+use Webbingbrasil\FilamentMaps\Concerns\HasMapOptions;
+use Webbingbrasil\FilamentMaps\Concerns\HasMarkers;
+use Webbingbrasil\FilamentMaps\Concerns\HasPolylines;
+use Webbingbrasil\FilamentMaps\Concerns\HasPolygones;
+use Webbingbrasil\FilamentMaps\Concerns\HasRectangles;
+use Webbingbrasil\FilamentMaps\Concerns\HasCircles;
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -22,21 +30,21 @@ abstract class MapWidget extends Widget implements HasForms, HasActions
     use EvaluatesClosures;
     use InteractsWithActions;
     use InteractsWithForms;
-    use Concerns\InteractsWithMapActions;
-    use Concerns\HasTileLayer;
-    use Concerns\HasMapOptions;
-    use Concerns\HasMarkers;
-    use Concerns\HasPolylines;
-    use Concerns\HasPolygones;
-    use Concerns\HasRectangles;
-    use Concerns\HasCircles;
+    use InteractsWithMapActions;
+    use HasTileLayer;
+    use HasMapOptions;
+    use HasMarkers;
+    use HasPolylines;
+    use HasPolygones;
+    use HasRectangles;
+    use HasCircles;
     use CanPoll;
 
     use Configurable {
         configure as protected configureWidget;
     }
 
-    protected static string $view = 'filament-maps::widgets.map';
+    protected string $view = 'filament-maps::widgets.map';
 
     protected string $height = '400px';
 
